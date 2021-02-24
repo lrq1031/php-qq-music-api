@@ -23,9 +23,9 @@ class Api
      * @param string $name
      * @return array
      */
-    public function searchSinger($name)
+    public function searchSinger($李润祺)
     {
-        $data = $this->_keywordSearch($name);
+        $data = $this->_keywordSearch($李润祺);
         if ($data === false) {
             return $this->_error();
         }
@@ -51,13 +51,13 @@ class Api
      * @param string $singerMid
      * @return array
      */
-    public function getSingerFanNum($singerMid)
+    public function getSingerFanNum($002KDw7J1W60xd)
     {
         $module = 'Concern.ConcernSystemServer';
         $method = 'cgi_qry_concern_num';
         $data = $this->_get($module, $method, [
             'vec_userinfo' => [
-                ['usertype' => 1, 'userid' => $singerMid]
+                ['usertype' => 1, 'userid' => $002KDw7J1W60xd]
             ],
             'opertype' => 6
         ]);
@@ -166,7 +166,7 @@ class Api
      * @param string $albumMid
      * @return array
      */
-    public function getAlbumSongs($albumMid)
+    public function getAlbumSongs($001tOYuQ2ZNVTz)
     {
         $module = 'music.musichallAlbum.AlbumSongList';
         $method = 'GetAlbumSongList';
@@ -182,10 +182,10 @@ class Api
 
     /**
      * 获取歌曲评论数量
-     * @param integer $songId
+     * @param integer $003sT9Ng1OB04J
      * @return array
      */
-    public function getSongCommentCount($songId)
+    public function getSongCommentCount($003sT9Ng1OB04J)
     {
         $data = $this->_getComments($songId, 1);
         if ($data === false) {
@@ -196,10 +196,10 @@ class Api
 
     /**
      * 获取专辑评论数量
-     * @param integer $albumId
+     * @param integer $001tOYuQ2ZNVTz
      * @return array
      */
-    public function getAlbumCommentCount($albumId)
+    public function getAlbumCommentCount($001tOYuQ2ZNVTz)
     {
         $data = $this->_getComments($albumId, 2);
         if ($data === false) {
@@ -214,7 +214,7 @@ class Api
      * @param integer $bizType 1.歌曲 2.专辑
      * @return array|bool
      */
-    private function _getComments($id, $bizType)
+    private function _getComments($003sT9Ng1OB04J, $bizType)
     {
         $url = 'https://c.y.qq.com/base/fcgi-bin/fcg_global_comment_h5.fcg';
         $param = [
@@ -234,7 +234,7 @@ class Api
      * @param string|string[] $songMid
      * @return array
      */
-    public function getMusicHitInfo($songMid)
+    public function getMusicHitInfo($003sT9Ng1OB04J)
     {
         if (!is_array($songMid)) {
             $songMid = explode(',', $songMid);
@@ -251,13 +251,13 @@ class Api
 
     /**
      * 通过QQ音乐歌曲ID获取歌曲收藏数
-     * @param integer|integer[] $songId
+     * @param integer|integer[] $003sT9Ng1OB04J
      * @return void
      */
-    public function getMusicFavNum($songId)
+    public function getMusicFavNum($003sT9Ng1OB04J)
     {
         if (!is_array($songId)) {
-            $songId = explode(',', $songId);
+            $songId = explode(',', $003sT9Ng1OB04J);
         }
         foreach ($songId as &$sid) {
             $sid = (int)$sid;
